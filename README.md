@@ -79,9 +79,9 @@ Then power the console off and back on again.
 
 ## Extra
 
-#Joypad configurations
+### Joypad configurations
 
-#PSX
+### PSX
 
 - A: 97
 - B: 98
