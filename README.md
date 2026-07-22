@@ -76,3 +76,14 @@ After the update is complete, go to the main menu, then press `Start`, then `Sto
 - Select `Yes`
 
 Then power the console off and back on again.
+
+## Extra
+
+#Joypad configurations
+
+#PSX
+
+- A: 97
+- B: 98
+- X: 100
+- Y: 99
