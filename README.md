@@ -1,0 +1,69 @@
+# Gamelist XML Generator
+
+This script updates a folder-level `gamelist.xml` file by adding missing ROM entries from the current directory.
+
+## What it does
+
+- Scans a target folder for supported ROM files
+- Reads the existing `gamelist.xml`
+- Uses the first `<game>` entry as a template
+- Adds new entries for ROMs that are not already present
+- Fills in fields such as:
+  - `gameid`
+  - `path`
+  - `image`
+  - `en_US`
+  - `zh_CN`
+  - `zh_TW`
+  - `ko_KR`
+  - `name`
+
+It also tries to match images in the `images/` folder using the ROM filename base name.
+
+## Supported ROM extensions
+
+The script currently recognizes these file types:
+
+- `.zip`, `.7z`
+- `.bin`, `.md`, `.gen`, `.smd`
+- `.nes`, `.fds`
+- `.gb`, `.gbc`, `.gba`
+- `.sms`, `.gg`
+- `.pce`
+- `.cue`, `.iso`, `.chd`, `.pbp`
+- `.n64`, `.z64`, `.v64`
+- `.nds`
+
+## Supported image extensions
+
+- `.png`
+- `.jpg`
+- `.jpeg`
+
+## Usage
+
+Run the script with a folder path:
+
+```bash
+python gamelist_generator.py <folder>
+```
+
+If no folder argument is provided, the script uses the current working directory.
+
+Example:
+
+```bash
+python gamelist_generator.py D:/Games/MyCollection
+```
+
+## Requirements
+
+- Python 3
+- A valid `gamelist.xml` file in the target folder
+- A template `<game>` entry inside that XML file
+
+## Notes
+
+- The script preserves the existing XML structure and appends new entries to the root `<gameList>`.
+- Blank whitespace between XML elements is stripped during formatting so the output stays clean and compact.
+- The `REMOVE_MISSING_ENTRIES` flag is currently set to `False`, so missing entries are not removed automatically.
